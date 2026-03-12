@@ -1,111 +1,123 @@
-Statistical Rethinking (2026 Edition)
-===============
+# Statistical Rethinking — Study Plan (2026)
 
-Registration: Is closed, but if you can get to the lecture hall, you are still welcome
+Personal study repository for working through *Statistical Rethinking*.
 
-Instructor: Richard McElreath
+We are using the course material by Richard McElreath, but following our own schedule:
+- 20 weeks total
+- 1 session per week
+- Each week starts on Monday
 
-Location: MPI-EVA 2nd floor lecture hall (the big one)
+## Study group
 
-Dates: 6 January to 13 March 2026
+- Nacho
+- Pablo
 
-Beginner section: Tuesdays 10am-11am
+## Materials
 
-Experienced section: Fridays 10am-11am
+- *Statistical Rethinking* (2nd edition)
+- 2026 lecture playlists
+- 2023 recorded lectures for review
+- Course repository and supporting material
 
-# What's New This Year
+## Repository structure
 
-There are two changes this year.
+~~~text
+statistical-rethinking/
+├── README.md
+├── notes/
+├── data/
+├── exercises/
+│   ├── week-01/
+│   ├── week-02/
+│   ├── week-03/
+│   └── ...
+├── solutions/
+│   ├── week-01/
+│   ├── week-02/
+│   ├── week-03/
+│   └── ...
+└── resources/
+~~~
 
-First, I am doing live in-person lectures at MPI-EVA. There is no remote enrollment. But I will record lectures and make them available to the general public.
+## Where to store things
 
-Second, this year I am splitting the course into two sections: Beginner and Experienced. See details under [Lectures](#lectures) below.
+### `exercises/`
 
-# Purpose
+Use this for draft work, personal attempts, scratch code, and partial answers.
 
-This course teaches statistics, but it focuses on scientific models. The unfortunate truth about data is that nothing much can be done with it, until we theorize about what caused it. Therefore the meaning of any statistical estimate depends upon assumptions outside the data and statistical model. So we will prioritize these outside assumptions: causal models, how to analyze them, and how to use them to construct scientifically meaningful statistical procedures. We will use Bayesian data analysis to connect scientific models to data. And we will learn powerful computational tools for coping with high-dimension, imperfect data of the kind that biologists and social scientists face.
+Example:
 
-This is not a theory course that focuses on theorems and proofs. It is a practical course that focuses on reliable and reproducible statistical workflow.
+~~~text
+exercises/
+└── week-01/
+    ├── pablo.R
+    ├── nacho.py
+    └── notes.md
+~~~
 
-# Who can take it?
+### `solutions/`
 
-Open to members of MPI-EVA, MPI-CBS, iDiv, Uni-Leipzig, and all the other scientific research institutes in Leizpig and the surrounding area. If you can physically get yourself to the lecture hall, and you are willing to keep up with the homework, then you are welcome.
+Use this for cleaned final versions after discussing together.
 
-I will do my best to record the live lectures, so students can review or make up for illness.
+Example:
 
-Prerequisite is at least one course in basic statistics and some experience with scripting in a language like R or Python.
+~~~text
+solutions/
+└── week-01/
+    ├── solution.md
+    ├── final-code.R
+    └── plots/
+~~~
 
-# How to Enroll
+### `notes/`
 
-Just show up at the lecture of your choice. If you complete all the homework for either section, you can have course credit.
+Use this for weekly summaries, concepts, reminders, and useful explanations.
 
-# Lectures
+### `data/`
 
-There will be 10 weeks of instruction. The lectures will be in person, 2nd floor lecture hall MPI-EVA. I will teach separate "beginner" and "experienced" sections. 
+Store datasets used in exercises.
 
-This means the material in each section will move at half speed compared to previous years. Each section will take 10 weeks to cover what was before 5 weeks of material. Hopefully this helps with work-life balance and learning.
+### `resources/`
 
-Beginner section: Tuesdays 10am-11am
+Store links, cheat sheets, PDFs, and extra reading.
 
-Experienced section: Fridays 10am-11am
+## Naming convention
 
-The beginner section is for people new to causal inference and Bayesian regression modelling. It will cover about the first half of my book. 
+Suggested file names:
 
-The experienced section is for people have had the course before but maybe lost steam in the second half. It will start with multilevel models and possibly follow student interest. For example, there are some new case studies I could present and analyze for the class, in place of old book content.
+- `week-01-notes.md`
+- `week-01-pablo.R`
+- `week-01-nacho.py`
+- `week-01-solution.md`
 
-# Format
+Keep names simple and consistent.
 
-We'll use the 2nd edition of my book, <[Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/)>, and possibly some draft chapters for the 3rd edition. I'll provide a PDF of the book to enrolled students.
+## Schedule
 
-There will be one set of homework problems each week for each section. If you make an good attempt on all 10, you can have transferrable course credit.
+| Week | Date | Topic | Reading |
+| --- | --- | --- | --- |
+| 01 | 16 March 2026 | Introduction | Chapters 1 & 2 |
+| 02 | 23 March 2026 | Garden of Forking Data | Chapters 2 & 3 |
+| 03 | 30 March 2026 | Geocentric Models | Chapter 4 |
+| 04 | 6 April 2026 | Categories & Causes | Chapter 4 |
+| 05 | 13 April 2026 | Estimands and Estiplans | Chapters 4 & 5 |
+| 06 | 20 April 2026 | Elemental Confounds I | Chapter 6 |
+| 07 | 27 April 2026 | Good and Bad Controls | Chapter 6 |
+| 08 | 4 May 2026 | MCMC and Item Response Models | Chapters 9 & 10 |
+| 09 | 11 May 2026 | Modeling Events | Chapters 10 & 11 |
+| 10 | 18 May 2026 | Confounds & Sensitivity Analysis | Chapter 12 |
+| 11 | 25 May 2026 | Multilevel Models | Chapter 12 |
+| 12 | 1 June 2026 | Multilevel Model Expansion | Chapter 13 |
+| 13 | 8 June 2026 | Correlated Features | Chapter 13 |
+| 14 | 15 June 2026 | Group-level Confounds / Social Networks I | Chapter 14 |
+| 15 | 22 June 2026 | Social Networks II | Chapter 14 |
+| 16 | 29 June 2026 | Gaussian Processes | Chapter 15 |
+| 17 | 6 July 2026 | Measurement Models | Chapter 15 |
+| 18 | 13 July 2026 | Missing and Censored Data | Chapter 15 |
+| 19 | 20 July 2026 | Generalized Linear Madness | Chapter 16 |
+| 20 | 27 July 2026 | Special Topic / Review | TBD |
 
-# Calendar & Topical Outline
+## Notes
 
-There are 10 weeks of instruction. Links to lecture recordings will appear in this table. Weekly problem sets are assigned each week and due the next week. Late work is always acceptable. But keeping up is in your own interest.
-
-The new lectures for 2026 will appear as links in the table below.
-
-Section A (Beginner) playlist: <[Section A](https://www.youtube.com/watch?v=ztbYkBPDOgU&list=PLDcUM9US4XdPMtSV81e1R_4B6NugQBvTP)>
-
-Section B (Experienced) playlist: <[Section B](https://www.youtube.com/watch?v=jh3RltVrQ-Q&list=PLDcUM9US4XdMD5hEU5uinyBYFFPXMYBfn)>
-
-Full 2026 Playlist (Sections A and B in chronological order): <[2026 Playlist](https://www.youtube.com/watch?v=MBhjDMXtANE&list=PLDcUM9US4XdNOlqSyhe38US8mFgmqzI14)>
-
-There is a set of recorded lectures from 2023 that might also be of use, either as a supplement to in-person lectures or for review: <[Statistical Rethinking 2023 Playlist](https://www.youtube.com/watch?v=FdnMWdICdRs&list=PLDcUM9US4XdPz-KxHM4XHt7uUVGWWVSus)>
-
-| Week ## | Meeting date | Section | Topic | Reading |
-| ------- | ----------- | ---------- | ------------------------- | ------------|
-| 01 | 6 January | Beginner | <[Introduction](https://www.youtube.com/watch?v=ztbYkBPDOgU)> | Chapters 1 & 2 
-|    | 9 January | Experienced | <[Multilevel Models](https://www.youtube.com/watch?v=jh3RltVrQ-Q)> | Chapter 12 
-| 02 | 13 January | Beginner | <[Garden of Forking Data](https://www.youtube.com/watch?v=pGVkCWlXnlg)> | Chapters 2 & 3
-|    | 16 January | Experienced | <[Multilevel Model Expansion](https://www.youtube.com/watch?v=Nv2rm1s9q6I)> | Chapter 13 
-| 03 | 20 January | Beginner | <[Geocentric Models](https://www.youtube.com/watch?v=JX_UyidsQNg)> | Chapter 4
-|    | 23 January | Experienced | <[Correlated Features](https://www.youtube.com/watch?v=MBhjDMXtANE)> | Chapter 13 
-| 04 | 27 January | Beginner | <[Categories & Causes](https://www.youtube.com/watch?v=GIdwLrW2nNo)> | Chapter 4
-|    | 30 January | Experienced | <[Group-level Confounds / Social Networks I](https://www.youtube.com/watch?v=XNNcN8sU8us)> | Chapter 14 
-| 05 | 3 February | Beginner | <[Estimands and Estiplans](https://www.youtube.com/watch?v=sYE8a95x-0E)> | Chapters 4 and 5
-|    | 6 February | Experienced | <[Social Networks II](https://www.youtube.com/watch?v=5oZA8FBn2fc)> | Chapter 14 
-| 06 | 10 February | Beginner | <[Elemental Confounds I](https://www.youtube.com/watch?v=lGR7D45Ww38)> | Chapter 6
-|    | 13 February | Experienced | <[Gaussian Processes](https://www.youtube.com/watch?v=MtXg7fxQgeA)> | Chapter 15 
-| 07 | 17 February | Beginner | <[Good and Bad Controls](https://www.youtube.com/watch?v=sTieMzOcreQ)> | Chapter 6
-|    | 20 February | Experienced | <[Measurement Models](https://www.youtube.com/watch?v=IkWcbiwymi4)> | Chapter 15 
-| 08 | 24 February | Beginner | <[MCMC and Item Response Models](https://www.youtube.com/watch?v=N_LRQUrdHag)> | Chapters 9 & 10
-|    | 27 February | Experienced | <[Missing and Censored Data](https://www.youtube.com/watch?v=VQm_toQpfEM)> | Chapter 15 
-| 09 | 3 March | Beginner | <[Modeling Events](https://www.youtube.com/watch?v=RuBUVQELw-c)> | Chapters 10 & 11
-|    | 6 March | Experienced | <[Generalized Linear Madness](https://www.youtube.com/watch?v=Cv3rkUZc_cg)> | Chapter 16
-| 10 | 10 March | Beginner | <[Confounds & Sensitivity Analysis](https://www.youtube.com/watch?v=pwN0kdN3reY)> | Chapter 12 
-|    | 20 March | Experienced | Special Topic - Students' Choice! | 
-
-# Coding
-
-This course involves a lot of scripting. Students can engage with the material using either the original R code examples or one of several conversions to other computing environments. The conversions are not always exact, but they are rather complete. See list and links at (https://xcelab.net/rm/)
-
-For those who want to use the original R code examples in the print book, you need to install the `rethinking` R package. The code is all on github <https://github.com/rmcelreath/rethinking/> and there are additional details about the package there, including information about using the more-up-to-date `cmdstanr` instead of `rstan` as the underlying MCMC engine.
-
-# Homework and solutions
-
-I will also post problem sets and solutions. Check the folders at the top of the repository.
-
-
-
-
+This repo is based on the course structure, but not the original course calendar.  
+We are doing one session per week over 20 weeks.
