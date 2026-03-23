@@ -19,41 +19,7 @@ We are using the course material by Richard McElreath, but following our own sch
 - 2023 recorded lectures for review
 - Course repository and supporting material
 
-## Repository structure
-
-~~~text
-statistical-rethinking/
-├── README.md
-├── notes/
-├── data/
-├── exercises/
-│   ├── week-01/
-│   ├── week-02/
-│   ├── week-03/
-│   └── ...
-├── solutions/
-│   ├── week-01/
-│   ├── week-02/
-│   ├── week-03/
-│   └── ...
-└── resources/
-~~~
-
 ## Where to store things
-
-### `exercises/`
-
-Use this for draft work, personal attempts, scratch code, and partial answers.
-
-Example:
-
-~~~text
-exercises/
-└── week-01/
-    ├── pablo.R
-    ├── nacho.py
-    └── notes.md
-~~~
 
 ### `solutions/`
 
@@ -72,10 +38,6 @@ solutions/
 ### `notes/`
 
 Use this for weekly summaries, concepts, reminders, and useful explanations.
-
-### `data/`
-
-Store datasets used in exercises.
 
 ### `resources/`
 
