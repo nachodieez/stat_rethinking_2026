@@ -1,0 +1,44 @@
+---
+title: "PabloVidal_A01"
+output: pdf_document
+date: "2026-03-15"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**A.1** To study honesty, behavioral scientists have used an experiment called the _Random Allocation Game_ (RAG). In a RAG, participants are given a single coin. Participants flip the coin, and if the result is heads, they win a small cash prize (like 10 Euros). Participants flip the coin in private—the experimenter cannot see or verify the result, and participants know this.
+
+While it is impossible to know if any individual participant honestly obeys the result of the coin flip, in the aggregate the proportion of prize claims provides information about the frequency of honesty in the sample. For example, if everyone claims the prize, then probably a lot of them are liars.
+
+Suppose 10 participants play a RAG and 8 of them claim the prize. Using the “garden of forking data” approach, how many ways are there to realize this sample (8 out of 10), if all participants are honest? How many ways, if 5 of the participants are honest? Can you figure out the number of honest participants that maximizes the number of ways to realize the observed sample (8 out of 10)?
+
+## Q1
+
+The question gives the context of all participants being honest. There are 10 participants and each of them shares their result (prize or no prize) after throwing the coin.
+
+Using the "garden of forking path approach", each result creates two options. That means that there are $2^{10} = 1024$ different paths. There are $\binom{10}{8} = 45$ ways of getting 8 people claiming the prize (or 2 that don't).
+
+## Q2
+
+The question gives the context of 5 participants being honest and 5 participants being dishonest.
+
+If we take dishonest to mean that they will always claim the prize, regardless of their coin result, this affects the "garden of forking paths" in a way that these participants don't create two options, only one. 
+
+Now, there are only $1^5*2^5 = 2^5 = 32$ different paths. This means that, to get 8 prizes claimed, 3 out of the 5 honest participants must claim the prize. That could be done in $\binom{5}{3} = 10$ ways.
+
+If we take dishonesty to mean that they will lie about their result, regardless of their coin result, that doesn't change the answer from Q1. 
+
+Each of the participants could claim the prize or not, so again, 1024 different paths, where 45 of them have 8 people claiming the prize. The information about dishonesty would change probabilities, not the raw count of possible ways to get the sample.
+
+## Q3
+
+If we take dishonest to mean that they will always claim the prize, dishonest participants effectively shrink the size of the "garden of forking data". 
+
+Taking $d$ as number of dishonest participants, the total number of paths is $2^{10-d}$. The number of ways we can get the sample would be $f(d) = \binom{10-d}{8-d} = \frac{(10-d)(9-d)}{2}$ if $d <= 8$, and $0$ if $d > 8$. 
+
+$d^* = \text{argmax}_d(f(d)) = 0$ is obvious. 
+
+If we take dishonesty to mean that they will lie about their result, regardless of their coin result, the total number of paths is $1024$ and the number of ways to get the sample would be 45, regardless of $d$. 
+
