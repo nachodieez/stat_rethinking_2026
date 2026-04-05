@@ -1,0 +1,68 @@
+---
+title: "PabloVidal_A02"
+output: pdf_document
+date: "2026-04-05"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**A.2** Suppose the globe tossing data (Chapter 2) had turned out to be 3water and 11 land. Construct the posterior distribution. Then using the posterior distribution, compute the posterior predictive distribution for the next 5 tosses of the same globe.
+
+## Q1 
+
+Setting a seed for reproducibility and formalizing the data that we've got:
+
+```{r}
+set.seed(100384812)
+sample_water <- 3
+sample_land <- 11
+n <- sample_water + sample_land
+```
+
+We can do this two ways: simulating with a grid approximation or sampling directly from the beta distribution.
+
+With grid approximation (using p = 0, p = 0.01, ..., p = 1):
+
+```{r, fig.height=5, fig.width=15}
+p_grid <- seq(0, 1, length.out = 101)
+prior <- rep(1, 101)
+likelihood <- dbinom(sample_water, n, p_grid)
+posterior_ <- prior * likelihood
+posterior <- posterior_ / sum(posterior_) 
+plot(p_grid, posterior, type = "l" ,
+     xlab = "Probability of water", 
+     ylab = "Posterior probability")
+```
+
+Using beta distribution:
+
+```{r, fig.height=5, fig.width=15}
+curve(dbeta(x, shape1 = sample_water + 1, shape2 = sample_land + 1), from = 0, to = 1,
+      xlab = "Probability of water",
+      ylab = "Density")
+```
+
+We can see that both approaches yield the same result.
+
+Now that we have our posterior distribution, we use it to simulate the next 5 tosses. It's important to use the whole distribution, not a summary of the distribution.
+
+Using the grid approximation (note the use of **samples** instead of a point estimate):
+
+```{r, fig.height=5, fig.width=15}
+samples <- sample(p_grid, prob = posterior, size = 1e4, replace = TRUE)
+predictive_posterior_samples <- rbinom(1e4, 5, prob = samples)
+predictive_posterior_dist <- table(predictive_posterior_samples) / 1e4
+plot(predictive_posterior_dist)
+```
+
+Using the beta distribution: 
+
+```{r, fig.height=5, fig.width=15}
+samples <- rbeta(1e4, shape1 = sample_water + 1, shape2 = sample_land + 1)
+predictive_posterior_samples <- rbinom(1e4, 5, prob = samples)
+predictive_posterior_dist <- table(predictive_posterior_samples) / 1e4
+plot(predictive_posterior_dist)
+```
+
